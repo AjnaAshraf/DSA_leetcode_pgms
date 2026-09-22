@@ -6,7 +6,6 @@ You want to maximize your profit by choosing a single day to buy one stock and c
 Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
 
  
-
 Example 1:
 
 Input: prices = [7,1,5,3,6,4]
@@ -21,3 +20,48 @@ Output: 0
 Explanation: In this case, no transactions are done and the max profit = 0.
 
 """
+
+prices = [3, 5, 1, 2]
+
+profit = 0 
+
+for i in range(0,len(prices)):
+
+    for j in range(i+1,len(prices)):
+
+        difference = prices[j] - prices[i]
+
+        if difference > profit:
+
+            profit = difference
+
+print(profit)
+
+
+
+
+### first try -- might make some error for some output
+# prices = [3, 5, 1, 2]
+
+# minimum = min(prices)
+
+# max = minimum
+
+# index = prices.index(minimum)
+
+# for i in range(index,len(prices)):
+
+#     if max < prices[i]:
+
+#         max = prices[i]
+
+# profit = max - minimum 
+
+# # if profit == 0 :
+
+# #     print (0)
+
+# # else:
+# print(f"profit is {profit} ")
+
+
