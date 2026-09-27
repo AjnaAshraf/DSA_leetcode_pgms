@@ -1,8 +1,6 @@
 """
 Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
-
 Consider the number of unique elements in nums to be k​​​​​​​​​​​​​​. After removing duplicates, return the number of unique elements k.
-
 The first k elements of nums should contain the unique numbers in sorted order. The remaining elements beyond index k - 1 can be ignored.
 
 Custom Judge:
@@ -39,4 +37,53 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 
  
 """
+# # solution 1
+nums = [0,0,1,1,1,2,2,3,3,4]
+
+unique_num =list(set(nums))
+# print(unique_num)
+
+# for i in range(len(unique_num),len(nums)):
+#     unique_num.append("_")
+k =len(unique_num)
+# print(k ," ,nums = [", unique_num,"]",sep=" ")
+print(k)
+print(unique_num)
+
+
+# method 2
+
+# nums = [0,0,1,1,1,2,2,3,3,4]
+# unique =[]
+# for n in nums:
+
+#     if n not in unique:
+
+#         unique.append(n)
+
+# if len(unique) != len(nums):
+
+#     for i in range(len(unique),len(nums)):
+
+#         unique = unique + ","
+
+# str(unique).rstrip(",")
+# print(unique)
+
+# nums = [0,0,1,1,1,2,2,3,3,4]
+# unique =nums[0]
+# k=1
+# for i in range(1 , len(nums)-1):
+
+#     if nums[i] != nums[i-1]:
+#         nums[k] = nums[i]
+#         k = k + 1
+
+# print(k)
+# # for i in range(0,k):
+
+
+
+
+
 
