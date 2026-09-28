@@ -35,24 +35,48 @@ Constraints:
 
 """
 
-nums1 = [1,2,3]
-m = 3
-nums2 = [2,5,6]
-n = 3
-for i in range(0,m):
+# nums1 = [1,2,3]
+# m = 3
+# nums2 = [2,5,6]
+# n = 3
+# for i in range(0,m):
 
-    for j in range(0,n):
+#     for j in range(0,n):
 
-        if nums1[i] >= nums2[j]:
-            nums1.insert(i,nums2[j])
-            nums2.pop(j)
+#         if nums1[i] >= nums2[j]:
+#             nums1.insert(i,nums2[j])
+#             nums2.pop(j)
 
-        else:
-            break
+#         else:
+#             break
 
+# nums1=nums1+nums2
+# print(nums1)
 
-nums1=nums1+nums2
+# solution2
+# nums1=sorted(nums1+nums2)
+# print(nums1)
 
-    
+nums1 = [1, 2, 3, 4, 7, 8, 0, 0, 0, 0]
+m = 6
+
+nums2 = [3, 4, 5, 6]
+n = 4
+
+i = m - 1
+j = n - 1
+k = m + n - 1
+
+while j >= 0:
+
+    if i >= 0 and nums1[i] > nums2[j]:
+        nums1[k] = nums1[i]
+        i -= 1
+
+    else:
+        nums1[k] = nums2[j]
+        j -= 1
+
+    k -= 1
+
 print(nums1)
-
