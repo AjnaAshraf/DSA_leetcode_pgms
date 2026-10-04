@@ -1,12 +1,8 @@
 """
 You are given a 1-indexed array of integers numbers that is already sorted in non-decreasing order.
-
 Find two numbers such that they add up to a specific target number. Let these two numbers be numbers[index1] and numbers[index2] where 1 <= index1 < index2 <= numbers.length.
-
 Return the indices of the two numbers index1 and index2 as an integer array [index1, index2] of length 2.
-
 The tests are generated such that there is exactly one solution. You may not use the same element twice.
-
 Your solution must use only constant extra space.
 
 Example 1:
@@ -28,3 +24,49 @@ Output: [1,2]
 Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2].
 
 """
+
+# solution 1
+
+# numbers = [-1,0]
+# target = -1
+# for n in numbers :
+
+#     diff = target -  n
+
+#     if diff in numbers:
+
+#         indexes = (numbers.index(n)+1,numbers.index(diff)+1)
+
+#         print(list(indexes))
+#         break
+
+
+# solution using 2-pointers
+
+numbers = [2,3,4]
+target = 6
+
+left = 0
+right = len(numbers)-1 #3
+
+for i in range(0,len(numbers)):
+
+    add = numbers[left] + numbers[right]
+
+    if  add == target:
+
+        print([left + 1, right + 1])
+        break
+
+    elif add > target:
+
+        right-=1
+
+    elif add<target:
+
+        left+= 1
+
+
+
+
+
