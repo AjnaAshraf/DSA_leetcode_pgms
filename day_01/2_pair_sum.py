@@ -20,9 +20,8 @@ Output: [0,1]
 
 """
 
-nums = list(map(int,input("enter the numbers:").split(",")))
-
-target = int(input("target : "))
+nums = [2,7,11,15]
+target = 9
 
 for n in nums:
 

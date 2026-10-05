@@ -31,28 +31,50 @@ Constraints:
 
  
 """
+#  Dutch National Flag Algorithm
+nums = [2, 0, 2, 1, 1, 0]
 
-nums = [2,0,2,1,1,0]
+low = 0
+mid = 0
+high = len(nums) - 1
 
-count_0 = nums.count(0)
-count_1 = nums.count(1)
-count_2 = nums.count(2)
+while mid <= high:
 
-index = 0
+    if nums[mid] == 0:
+        nums[low], nums[mid] = nums[mid], nums[low]
+        low += 1
+        mid += 1
 
-for i in range(count_0):
-    nums[index] = 0
-    index = index + 1
+    elif nums[mid] == 1:
+        mid += 1
 
-for i in range(count_1):
-    nums[index] = 1
-    index = index + 1
-
-for i in range(count_2):
-    nums[index] = 2
-    index = index + 1
+    else:  # nums[mid] == 2
+        nums[mid], nums[high] = nums[high], nums[mid]
+        high -= 1
 
 print(nums)
+
+# nums = [2,0,2,1,1,0]
+
+# count_0 = nums.count(0)
+# count_1 = nums.count(1)
+# count_2 = nums.count(2)
+
+# index = 0
+
+# for i in range(count_0):
+#     nums[index] = 0
+#     index = index + 1
+
+# for i in range(count_1):
+#     nums[index] = 1
+#     index = index + 1
+
+# for i in range(count_2):
+#     nums[index] = 2
+#     index = index + 1
+
+# print(nums)
 
     
     
