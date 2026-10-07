@@ -37,15 +37,31 @@ It does not matter what you leave beyond the returned k (hence they are undersco
  
 """
 
-nums = [0,1,2,2,3,0,4,2]
+# nums = [0,1,2,2,3,0,4,2]
+# val = 2
+
+# expected_nums = []
+
+# for n in nums:
+
+#     if n == val:
+
+#         nums.remove(n)
+
+# k = len(nums)-1
+
+# print(k,",nums=",nums)
+
+nums = [0, 1, 2, 2, 3, 0, 4, 2]
 val = 2
 
-expected_nums = []
+k = 0
 
 for n in nums:
 
     if n != val:
+        nums[k] = n
+        k += 1
 
-        expected_nums.append(n)
-
-print(len(expected_nums), ",nums =",expected_nums)
+print("k =", k)
+print("valid elements =", nums[:k])
